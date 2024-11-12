@@ -1,0 +1,50 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #EDE6D5;
+    color: #343A40;
+    font-family: 'EstabuloFonte', sans-serif;
+  
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      
+      a {
+        text-decoration: none;
+        color:#343A40;
+        cursor: pointer;
+        transition: color 0.3s;
+
+            &:hover {
+                color: #816950;
+            }
+      }
+  
+      
+    }
+
+    button {
+      background-color: #343A40;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #816950;
+      }
+    }
+
+  }
+  
