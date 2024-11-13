@@ -10,13 +10,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterModule } from '@angular/router';
 
+import {MatIconModule} from '@angular/material/icon'
 @NgModule({
   declarations: [
     AppComponent,
-    CabecalhoComponent
+    CabecalhoComponent,
+    
 
   ],
   imports: [
+    MatIconModule,
     BrowserModule,
     RouterModule,
     HomeComponent

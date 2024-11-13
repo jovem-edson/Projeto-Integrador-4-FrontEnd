@@ -1,7 +1,10 @@
 main {
     background-color: #EDE6D5;
 
-    h1, h2, p, button {
+    h1,
+    h2,
+    p,
+    button {
         font-family: 'EstabuloFonte', sans-serif;
     }
 
@@ -10,25 +13,29 @@ main {
         justify-content: space-between;
         align-items: center;
 
-        img {
-            display: flex;
-            height: auto;
-            width: 350px;
+        .container-imagem {
+            img {
+                display: flex;
+                height: auto;
+                width: 300px;
+            }
         }
 
         .informacoes {
             width: 523px;
-            text-align: justify;
+            text-align: center;
 
             h1 {
+                font-size: 30px;
                 margin: 0;
             }
 
             p {
+                font-size: 20px;
                 color: #816950
             }
 
-            
+
         }
 
         hr {
@@ -39,7 +46,7 @@ main {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            
+
             button {
                 cursor: pointer;
                 border: none;
@@ -62,7 +69,11 @@ main {
                 border-radius: 5px;
             }
 
-            
-           }
+
+        }
+    }
+
+    .segunda-secao {
+        
     }
 }
