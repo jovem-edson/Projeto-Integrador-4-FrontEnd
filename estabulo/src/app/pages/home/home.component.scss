@@ -4,4 +4,65 @@ main {
     h1, h2, p, button {
         font-family: 'EstabuloFonte', sans-serif;
     }
+
+    .primeira-secao {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            display: flex;
+            height: auto;
+            width: 350px;
+        }
+
+        .informacoes {
+            width: 523px;
+            text-align: justify;
+
+            h1 {
+                margin: 0;
+            }
+
+            p {
+                color: #816950
+            }
+
+            
+        }
+
+        hr {
+            border: solid 1px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            button {
+                cursor: pointer;
+                border: none;
+                padding: 8px;
+                width: 120px;
+
+            }
+
+            .botao-primario {
+                background-color: #DFCDB1;
+                color: #816950;
+                border: solid 1px;
+                border-radius: 5px;
+            }
+
+            .botao-secundario {
+                background-color: #816950;
+                color: white;
+                border: solid 1px;
+                border-radius: 5px;
+            }
+
+            
+           }
+    }
 }
