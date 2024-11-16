@@ -12,6 +12,8 @@ import { RodapeComponent } from './components/rodape/rodape.component';
 //páginas
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CadastrarCavaloComponent } from './pages/cadastrar-cavalo/cadastrar-cavalo.component';
+import { DetalhesCavaloComponent } from './pages/detalhes-cavalo/detalhes-cavalo.component';
 
 //icones
 import {MatIconModule} from '@angular/material/icon'
@@ -23,10 +25,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     CabecalhoComponent,
-    HomeComponent,
     CardCavaloComponent,
     RodapeComponent,
+    
+    HomeComponent,
     LoginComponent,
+    CadastrarCavaloComponent,
+    DetalhesCavaloComponent,
 
     MatIconModule,
     BrowserModule,
