@@ -48,5 +48,46 @@
       }
     }
 
+      /* Media Query para telas pequenas */
+    @media (max-width: 768px) {
+      padding: 15px; /* Reduz o padding */
+
+      .logo {
+          font-size: 18px; /* Diminui o tamanho da fonte */
+          width: auto; /* Deixa a largura da logo mais flexível */
+      }
+
+      .nav {
+          gap: 20px; /* Aumenta o espaçamento entre os links */
+          a {
+              font-size: 14px; /* Diminui o tamanho da fonte dos links */
+          }
+      }
+
+      button {
+          padding: 5px 15px; /* Ajusta o padding do botão */
+          font-size: 14px; /* Diminui o tamanho da fonte do botão */
+      }
   }
+
+  /* Media Query para telas muito pequenas */
+  @media (max-width: 480px) {
+      .logo {
+          font-size: 16px; /* Diminui mais ainda o tamanho da fonte */
+      }
+
+      .nav {
+          gap: 15px; /* Ajusta o espaçamento entre os links */
+          a {
+              font-size: 12px; /* Diminui o tamanho da fonte dos links */
+          }
+      }
+
+      button {
+        width: 60px;
+          padding: 4px 12px; /* Ajusta o padding do botão */
+          font-size: 12px; /* Diminui ainda mais o tamanho da fonte do botão */
+      }
+  }
+}
   

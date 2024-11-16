@@ -1,20 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cabecalho',
+  standalone: true,
+  imports: [],
   templateUrl: './cabecalho.component.html',
-  styleUrls: ['./cabecalho.component.scss']
+  styleUrl: './cabecalho.component.scss'
 })
-export class CabecalhoComponent implements OnInit {
-  public userName: string = 'João Silva';
-  public isLoggedIn: boolean = true;
+export class CabecalhoComponent {
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  logout(): void {
-    this.isLoggedIn = false;
-    this.userName = '';
-  }
 }

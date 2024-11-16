@@ -6,74 +6,143 @@ main {
     p,
     button {
         font-family: 'EstabuloFonte', sans-serif;
+        letter-spacing: normal;
+        margin: 0;
     }
 
     .primeira-secao {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
 
         .container-imagem {
-            img {
-                display: flex;
-                height: auto;
-                width: 300px;
-            }
-        }
-
-        .informacoes {
-            width: 523px;
-            text-align: center;
-
-            h1 {
-                font-size: 30px;
-                margin: 0;
-            }
-
-            p {
-                font-size: 20px;
-                color: #816950
-            }
-
-
-        }
-
-        hr {
-            border: solid 1px;
-        }
-
-        .botoes {
+            flex: 1;
+            /* Ajusta o tamanho proporcionalmente */
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+
+            img {
+                height: auto;
+                max-width: 100%;
+                object-fit: contain;
+                /* Garante que a imagem se ajuste bem */
+            }
+        }
+
+        .primeira-secao-conteudo-container {
+            flex: 2;
+            /* Dá mais espaço para o conteúdo central */
+            display: flex;
+            justify-content: center;
             align-items: center;
+            padding: 10px;
 
-            button {
-                cursor: pointer;
-                border: none;
-                padding: 8px;
-                width: 120px;
+            .informacoes {
+                width: 100%;
+                /* Para que se ajuste bem em telas menores */
+                max-width: 523px;
+                /* Limita o tamanho em telas grandes */
+                text-align: center;
 
+                h1 {
+                    font-size: clamp(24px, 5vw, 10px);
+                    /* Responsivo */
+                    margin: 0;
+                }
+
+                p {
+                    font-size: clamp(16px, 4vw, 10px);
+                    /* Responsivo */
+                    color: #816950;
+                }
             }
 
-            .botao-primario {
-                background-color: #DFCDB1;
-                color: #816950;
+            hr {
                 border: solid 1px;
-                border-radius: 5px;
+                margin: 10px 0;
             }
 
-            .botao-secundario {
-                background-color: #816950;
-                color: white;
-                border: solid 1px;
-                border-radius: 5px;
+            .botoes {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                /* Para empilhar os botões em telas menores */
+                gap: 8px;
+
+                button {
+                    cursor: pointer;
+                    border: none;
+                    padding: 8px;
+
+                    border: solid 1px;
+                    border-radius: 5px;
+                    width: clamp(100px, 10vw, 120px);
+                    /* Responsivo */
+
+                    &.botao-primario {
+                        background-color: #DFCDB1;
+                        color: #816950;
+                    }
+
+                    &.botao-secundario {
+                        background-color: #816950;
+                        color: white;
+                    }
+                }
             }
-
-
         }
     }
 
     .segunda-secao {
+        background-color: #816950;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+
+        div {
+            display: flex;
+            align-items: center;
+
+            h1 {
+                color: #EDE6D5;
+                font-weight: 500;
+            }
+
+            button {
+                display: flex;
+                justify-content: space-around;
+                width: 90px;
+                align-items: center;
+                background-color: #DFCDB1;
+                border: none;
+                cursor: pointer;
+                color: #816950;
+                transition: 0.3s;
+                border-radius: 5px;
+                &:hover {
+                    background-color: #5a4f3d;
+                    color: #DFCDB1;
+                }
+            }
+        }
+
+
+    }
+
+    .terceira-secao {
+        display: flex;
+        justify-content: center;
         
+        .terceira-secao-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+            gap: 30px;
+        }
+
     }
 }
