@@ -12,7 +12,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterModule } from '@angular/router';
 
+//icones
 import {MatIconModule} from '@angular/material/icon'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +28,8 @@ import {MatIconModule} from '@angular/material/icon'
 
     MatIconModule,
     BrowserModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   providers: [
     provideAnimationsAsync()

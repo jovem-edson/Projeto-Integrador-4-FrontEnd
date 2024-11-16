@@ -4,10 +4,15 @@ main {
     h1,
     h2,
     p,
-    button {
+    button,
+    label,
+    input,
+    select,
+    option {
         font-family: 'EstabuloFonte', sans-serif;
         letter-spacing: normal;
         margin: 0;
+        
     }
 
     .primeira-secao {
@@ -19,7 +24,6 @@ main {
 
         .container-imagem {
             flex: 1;
-            /* Ajusta o tamanho proporcionalmente */
             display: flex;
             justify-content: center;
 
@@ -33,7 +37,6 @@ main {
 
         .primeira-secao-conteudo-container {
             flex: 2;
-            /* Dá mais espaço para o conteúdo central */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -69,7 +72,6 @@ main {
                 justify-content: space-around;
                 align-items: center;
                 flex-wrap: wrap;
-                /* Para empilhar os botões em telas menores */
                 gap: 8px;
 
                 button {
@@ -144,5 +146,122 @@ main {
             gap: 30px;
         }
 
+    }
+
+    .quarta-secao {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 900px;
+        background-color: #816950;
+        .contato-imagem {
+            display: flex;
+            flex: 3;
+            background-image: url(../../../assets/images/cavalos/CavaloLogin.svg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .contato-formulario {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+    
+            form {
+                
+                left: -205px;
+                background-color: #DFCDB1;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            input {
+                height: 20px;
+                padding: 1px 2px;
+            }
+
+            select, option {
+                height: 26px;
+                padding: 1px 2px;
+            }
+    
+            .formulario-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%; /* Para o formulário ocupar toda a largura da div */
+            }
+    
+            .formulario-campo {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+    
+            .formulario-campo-duplo {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+    
+            textarea {
+                width: 100%;
+                height: 100px;
+                border-radius: 5px;
+                resize: none;
+            }
+    
+            button {
+                padding: 10px 20px;
+                background-color: #343A40;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+    
+                &:hover {
+                    background-color: #816950;
+                }
+            }
+        }
+    
+        /* Media Query para telas pequenas */
+        @media (max-width: 768px) {
+            flex-direction: column;
+    
+            .contato-imagem {
+                flex: 1;
+                height: 50vh; /* Ajusta a altura da imagem em telas menores */
+            }
+    
+            .contato-formulario {
+                flex: 1;
+                padding: 15px;
+                margin-top: 10px;
+            }
+    
+            form {
+                position: static !important;
+                margin-top: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+    
+            .formulario-campo-duplo {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     }
 }
