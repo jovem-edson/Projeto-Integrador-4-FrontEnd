@@ -5,9 +5,9 @@
     </div>
 
     <div class="cadastro-container">
-        <form [formGroup]="cavaloForm" (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="onSubmit()">
             <div class="formulario-cadastro-titulo">
-                <a>
+                <a (click)="voltar()">
                     <mat-icon>arrow_back</mat-icon>
                 </a>
                 <h1>Inserir Cavalo</h1>
@@ -18,20 +18,20 @@
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome"
                         placeholder="Digite o nome do cavalo" required
-                        formControlName="nome" />
+                        [(ngModel)]="cavalo.nome" name="cavalo.nome" />
                 </div>
 
                 <div class="formulario-cadastro-campo">
                     <label for="idade">Idade:</label>
                     <input type="number" id="idade" placeholder="Digite a idade"
-                        required formControlName="idade" />
+                        required [(ngModel)]="cavalo.idade" name="cavalo.idade" />
                 </div>
             </div>
 
             <div class="formulario-cadastro-campo-duplo">
                 <div class="formulario-cadastro-campo">
                     <label for="tipo">Tipo:</label>
-                    <select id="tipo" required formControlName="tipo">
+                    <select id="tipo" required [(ngModel)]="cavalo.tipo" name="cavalo.tipo">
                         <option value="Corrida">Corrida</option>
                         <option value="Tração">Tração</option>
                         <option value="Serviço">Serviço</option>
@@ -41,7 +41,7 @@
                 <div class="formulario-cadastro-campo">
                     <label for="raca">Raça:</label>
                     <input type="text" id="raca" placeholder="Digite a raça"
-                        required formControlName="raca" />
+                        required [(ngModel)]="cavalo.raca" name="cavalo.raca" />
                 </div>
             </div>
 
@@ -50,13 +50,13 @@
                     <label for="pelagem">Pelagem:</label>
                     <input type="text" id="pelagem"
                         placeholder="Digite a pelagem"
-                        formControlName="pelagem" />
+                        [(ngModel)]="cavalo.pelagem" name="cavalo.pelagem"/>
                 </div>
 
                 <div class="formulario-cadastro-campo">
                     <label for="preco">Preço:</label>
                     <input type="number" id="preco" step="0.01"
-                        placeholder="Digite o preço" formControlName="preco" />
+                        placeholder="Digite o preço" [(ngModel)]="cavalo.preco" name="cavalo.preco"/>
                 </div>
             </div>
 
@@ -65,15 +65,15 @@
                     <label>Gênero:</label>
                     <div class="radio-group">
                         <div>
-                            <input type="radio" id="macho" name="genero"
+                            <input type="radio" id="macho"
                                 value="Macho" required
-                                formControlName="genero" />
+                                [(ngModel)]="cavalo.genero" name="cavalo.genero" />
                             <label for="macho">Macho</label>
                         </div>
 
                         <div>
-                            <input type="radio" id="femea" name="genero"
-                                value="Fêmea" formControlName="genero" />
+                            <input type="radio" id="femea"
+                                value="Fêmea" [(ngModel)]="cavalo.genero" name="cavalo.genero"/>
                             <label for="femea">Fêmea</label>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                 <div class="formulario-cadastro-campo checkbox">
                     <label>Disponível:</label>
                     <input type="checkbox" id="disponivelParaCompra"
-                        formControlName="disponivelParaCompra" />
+                        [(ngModel)]="cavalo.disponivelParaCompra" name="cavalo.disponivelParaCompra"/>
                 </div>
             </div>
 
@@ -92,11 +92,11 @@
                     type="file"
                     id="imagem"
                     accept="image/*"
-                    (change)="onImageChange($event)" />
+                    (change)="onImageChange($event)"/>
             </div>
 
             <div class="formulario-cadastro-botao">
-                <button type="submit" [disabled]="cavaloForm.invalid">Cadastrar
+                <button type="submit" (click)="cadastrarCavalo()">Cadastrar
                     Cavalo</button>
             </div>
         </form>

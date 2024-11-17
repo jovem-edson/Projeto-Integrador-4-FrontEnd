@@ -20,8 +20,8 @@ export class CavaloService {
     return this.http.get<Cavalo>(`${this.baseUrl}/${id}`);
   }
 
-  inserirCavalo(cavalo: Cavalo): Observable<Cavalo>{
-    return this.http.post<Cavalo>(this.baseUrl, cavalo);
+  inserirCavalo(cavalo: FormData): Observable<any> {
+    return this.http.post(this.baseUrl, cavalo);
   }
 
   atualizarCavalo(id: Number, cavalo: Cavalo): Observable<void> {

@@ -1,12 +1,13 @@
-export interface Cavalo {
-    id?: Number;
-    nome: String;
-    idade: Number;
-    tipo: String;
-    raca: String;
-    pelagem: String;
-    genero: String;
-    preco: Number;
-    disponivelParaCompra: Boolean;
-    imagem?: String;
+  export interface Cavalo {
+    id?: number;
+    nome: string;
+    idade: number;
+    tipo: string;
+    raca: string;
+    pelagem: string;
+    genero: string;
+    preco: number;
+    disponivelParaCompra: boolean;
+    imagem?: File; 
   }
+  
