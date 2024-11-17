@@ -1,11 +1,10 @@
 <header class="cabecalho">
-    <div class="logo">Isto, Cavalos!</div>
-    <nav class="nav">
-      <a href="/home/">HOME</a> |
-      <a href="/cavalos/">CAVALOS</a> |
-      <a href="/sobre/">SOBRE</a> |
-      <a href="/dicas/">DICAS</a>
-    </nav>
-    <button>ENTRAR </button>
-  </header>
-  
+  <div class="logo">Isto, Cavalos!</div>
+  <nav class="nav">
+    <a routerLink="/">HOME</a> |
+    <a routerLink="/cavalos">CAVALOS</a> |
+    <a routerLink="/sobre">SOBRE</a> |
+    <a routerLink="/dicas">DICAS</a>
+  </nav>
+  <button (click)="entrar()">ENTRAR </button>
+</header>

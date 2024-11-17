@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,5 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  constructor(private router: Router) {}
 
+
+  voltar(): void {
+    this.router.navigate(['/']);
+  }
 }

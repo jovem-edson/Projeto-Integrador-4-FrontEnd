@@ -1,21 +1,21 @@
 <main class="pagina-detalhes">
 <div class="detalhes-cavalo">
     <div class="imagem-cavalo">
-      <img src="../../../assets/images/cavalos/black.jpg" alt="Imagem do Cavalo" />
+      <img [src]="cavalo?.imagem" alt="Imagem do Cavalo" />
     </div>
 
     <div class="info-cavalo">
     <div class="info-principal">
         <div>
-        <a>
+        <a (click)="voltar()">
             <mat-icon>arrow_back</mat-icon>
         </a>
-      <h1>Lillypad</h1>
+      <h1>{{cavalo?.nome}}</h1>
       <a>
         <mat-icon>edit</mat-icon>
     </a>
     </div>
-      <h3>Raça: <span>Puro-Sangue Inglês</span></h3>
+      <h3>Raça: <span>{{cavalo?.raca}}</span></h3>
     </div>
     <div class="descricao">
       <p>
@@ -25,12 +25,12 @@
     </div>
     <div class="info-detalhada">
       <ul>
-        <li><strong>Idade:</strong> 5 anos</li>
-        <li><strong>Pelagem:</strong> Castanha</li>
-        <li><strong>Gênero:</strong> Macho</li>
-        <li><strong>Tipo:</strong> Corrida</li>
-        <li><strong>Preço:</strong> R$ 15.000,00</li>
-        <li><strong>Disponível para compra:</strong> Sim</li>
+        <li><strong>Idade:</strong> {{cavalo?.idade}}</li>
+        <li><strong>Pelagem:</strong> {{cavalo?.pelagem}}</li>
+        <li><strong>Gênero:</strong> {{cavalo?.genero}}</li>
+        <li><strong>Tipo:</strong> {{cavalo?.tipo}}</li>
+        <li><strong>Preço:</strong> {{cavalo?.preco}}</li>
+        <li><strong>Disponível para compra:</strong> {{cavalo?.disponivelParaCompra}}</li>
       </ul>
     </div>
     <div class="acao">

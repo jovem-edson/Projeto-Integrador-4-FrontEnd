@@ -18,8 +18,8 @@
                 <hr />
 
                 <div class="botoes">
-                    <button class="botao-primario">alooo</button>
-                    <button class="botao-secundario">alooo</button>
+                    <button class="botao-primario">Fazer Login</button>
+                    <button class="botao-secundario" (click)="adicionarCavalo()">Adicionar Cavalo</button>
                 </div>
 
             </div>
@@ -45,14 +45,7 @@
 
     <section class="terceira-secao">
         <div class="terceira-secao-container">
-            <app-card-cavalo></app-card-cavalo>
-            <app-card-cavalo></app-card-cavalo>
-            <app-card-cavalo></app-card-cavalo>
-            <app-card-cavalo></app-card-cavalo>
-            <app-card-cavalo></app-card-cavalo>
-            <app-card-cavalo></app-card-cavalo>
-
-        </div>
+            <app-card-cavalo *ngFor="let cavalo of listaCavalos" [cavalo]="cavalo"></app-card-cavalo>        </div>
     </section>
 
     <section class="quarta-secao">

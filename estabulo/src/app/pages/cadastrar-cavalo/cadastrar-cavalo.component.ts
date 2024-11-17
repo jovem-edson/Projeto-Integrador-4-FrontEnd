@@ -54,6 +54,10 @@ export class CadastrarCavaloComponent implements OnInit {
     this.cavaloService.inserirCavalo(formData).subscribe({
       next: () => {
         alert('Cavalo cadastrado com sucesso!');
+        console.log('Cavalo:');
+        formData.forEach((value, key) => {
+          console.log(key + ': ' + value);
+        });
       },
       error: (err) => {
         alert('Erro ao cadastrar cavalo: ' + err.message);

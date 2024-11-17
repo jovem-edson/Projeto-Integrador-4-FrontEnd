@@ -10,6 +10,8 @@ import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { CardCavaloComponent } from './components/card-cavalo/card-cavalo.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 //páginas
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -30,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     CabecalhoComponent,
     CardCavaloComponent,
     RodapeComponent,
+    AppRoutingModule,
     
     HomeComponent,
     LoginComponent,

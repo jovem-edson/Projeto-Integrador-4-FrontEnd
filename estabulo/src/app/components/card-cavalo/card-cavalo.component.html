@@ -1,19 +1,19 @@
-<div class="card-container">
+<div class="card-container" (click)="verDetalhes(cavalo.id)">
     <div class="card-titulo">
-        <h1>TURKOMAN</h1>
+        <h1>{{cavalo?.nome}}</h1>
     </div>
 
     <div class="card-imagem">
-        <img src="../../../assets/images/cavalos/black.jpg"/>
+        <img [src]="cavalo?.imagem || '../../../assets/images/cavalos/black.jpg'" alt="Imagem do cavalo"/>
     </div>
 
     <div class="card-info">
         <div class="card-info-pelagem">
-            <h2>CARAMELO</h2>
+            <h2>{{cavalo?.pelagem}}</h2>
         </div>
 
         <div class="card-info-preco">
-            <h2>42 $</h2>
+            <h2>{{cavalo?.preco}} $</h2>
         </div>
 
     </div>

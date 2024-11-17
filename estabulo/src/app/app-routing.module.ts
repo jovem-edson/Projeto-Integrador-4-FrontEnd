@@ -1,8 +1,17 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
+import { DetalhesCavaloComponent } from "./pages/detalhes-cavalo/detalhes-cavalo.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { LoginComponent } from "./pages/login/login.component";
+import { CadastrarCavaloComponent } from "./pages/cadastrar-cavalo/cadastrar-cavalo.component";
 
 const routes: Routes = [
-  {}
+  { path: '', component: HomeComponent },
+  { path: 'cavalo/entrar', component: LoginComponent },
+  { path: 'cavalo/cadastrar', component: CadastrarCavaloComponent },
+  { path: 'cavalo/:id', component: DetalhesCavaloComponent },
+
+
 ]
 
 @NgModule({
