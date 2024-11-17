@@ -19,6 +19,8 @@ import { DetalhesCavaloComponent } from './pages/detalhes-cavalo/detalhes-cavalo
 import {MatIconModule} from '@angular/material/icon'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -36,7 +38,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatIconModule,
     BrowserModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
