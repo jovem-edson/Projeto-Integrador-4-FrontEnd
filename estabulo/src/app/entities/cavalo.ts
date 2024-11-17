@@ -8,4 +8,5 @@ export interface Cavalo {
     genero: String;
     preco: Number;
     disponivelParaCompra: Boolean;
+    imagem?: String;
   }

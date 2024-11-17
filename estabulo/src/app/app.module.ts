@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //nossos componentes 
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     FontAwesomeModule,
 
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
