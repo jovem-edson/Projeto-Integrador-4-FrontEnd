@@ -6,5 +6,7 @@
     <a routerLink="/sobre">SOBRE</a> |
     <a routerLink="/dicas">DICAS</a>
   </nav>
-  <button (click)="entrar()">ENTRAR </button>
+  <button (click)="toggleLogin()">
+    {{ isAdmin ? 'SAIR' : 'ENTRAR' }}
+  </button>
 </header>

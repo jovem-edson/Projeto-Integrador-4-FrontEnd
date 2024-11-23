@@ -38,12 +38,28 @@ export class DetalhesCavaloComponent implements OnInit {
   }
 
   voltar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
+
+  
   editarCavalo(): void {
     if (this.cavalo) {
       this.router.navigate(['/cavalo/atualizar', this.cavalo.id]);  // Redireciona para a página de atualização com o ID do cavalo
     }
   }
-
+  apagarCavalo(id: any): void {
+    if (this.cavalo) {
+      this.cavaloService.apagarCavalo(id).subscribe({
+        next: () => {
+          alert('Cavalo excluído com sucesso');
+          this.router.navigate(['/home']); // Redireciona para a página inicial
+        },
+        error: (err) => {
+          console.error('Erro ao excluir o cavalo:', err);
+          // Aqui você pode tratar erros, como exibir uma mensagem para o usuário
+        } 
+      });
+    }
+  }
+  
 }

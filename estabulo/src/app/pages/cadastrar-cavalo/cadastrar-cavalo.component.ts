@@ -4,6 +4,7 @@ import { CavaloService } from '../../services/cavalo.service';
 import { Cavalo } from '../../entities/cavalo';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-cadastrar-cavalo',
   standalone: true,
@@ -29,11 +30,51 @@ export class CadastrarCavaloComponent implements OnInit {
   ngOnInit(): void {}
 
   voltar(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 
   onSubmit(): void {
-    this.cadastrarCavalo();
+    if (this.validarCamposObrigatorios()) {
+      this.cadastrarCavalo();
+    }
+  }
+
+  validarCamposObrigatorios(): boolean {
+    let valido = true;
+
+    // Verificar se todos os campos obrigatórios foram preenchidos
+    if (!this.cavalo.nome || this.cavalo.nome.trim() === '') {
+      alert('Nome é obrigatório');
+      valido = false;
+    }
+    if (!this.cavalo.idade || this.cavalo.idade <= 0) {
+      alert('Idade é obrigatória e deve ser maior que zero');
+      valido = false;
+    }
+    if (!this.cavalo.tipo || this.cavalo.tipo.trim() === '') {
+      alert('Tipo é obrigatório');
+      valido = false;
+    }
+    if (!this.cavalo.raca || this.cavalo.raca.trim() === '') {
+      alert('Raça é obrigatória');
+      valido = false;
+    }
+    if (!this.cavalo.genero || this.cavalo.genero.trim() === '') {
+      alert('Gênero é obrigatório');
+      valido = false;
+    }
+    if (this.cavalo.preco <= 0) {
+      alert('Preço é obrigatório e deve ser maior que zero');
+      valido = false;
+    }
+    
+    // Verificar se a imagem foi fornecida (se for obrigatória)
+    if (!this.cavalo.imagem) {
+      alert('Imagem é obrigatória');
+      valido = false;
+    }
+
+    return valido;
   }
 
   cadastrarCavalo(): void {
@@ -50,11 +91,11 @@ export class CadastrarCavaloComponent implements OnInit {
     if (this.cavalo.imagem) {
       formData.append('imagem', this.cavalo.imagem, this.cavalo.imagem.name);
     }
-  
+
     this.cavaloService.inserirCavalo(formData).subscribe({
       next: () => {
         alert('Cavalo cadastrado com sucesso!');
-        console.log('Cavalo:');
+        console.log('Cavalo:', formData);
         formData.forEach((value, key) => {
           console.log(key + ': ' + value);
         });
@@ -64,7 +105,6 @@ export class CadastrarCavaloComponent implements OnInit {
       }
     });
   }
-  
 
   onImageChange(event: Event): void {
     const input = event.target as HTMLInputElement;

@@ -106,7 +106,7 @@ export class AtualizarCavaloComponent implements OnInit {
     this.router.navigate(['/']);
   }
   voltar(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 
 

@@ -13,7 +13,5 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
 
-  voltar(): void {
-    this.router.navigate(['/']);
-  }
+ 
 }

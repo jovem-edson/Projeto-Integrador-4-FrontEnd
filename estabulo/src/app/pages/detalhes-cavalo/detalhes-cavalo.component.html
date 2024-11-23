@@ -14,8 +14,8 @@
           <a (click)="editarCavalo()">
             <mat-icon>edit</mat-icon>
           </a>
-          
-        
+
+
         </div>
         <h3>Raça: <span>{{cavalo?.raca}}</span></h3>
       </div>
@@ -37,7 +37,7 @@
         </ul>
       </div>
       <div class="acao">
-        <button>Remover Cavalo</button>
+        <button (click)="apagarCavalo(cavalo?.id)">Remover Cavalo</button>
       </div>
     </div>
   </div>
