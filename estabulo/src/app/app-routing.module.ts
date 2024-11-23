@@ -4,12 +4,14 @@ import { DetalhesCavaloComponent } from "./pages/detalhes-cavalo/detalhes-cavalo
 import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { CadastrarCavaloComponent } from "./pages/cadastrar-cavalo/cadastrar-cavalo.component";
+import { AtualizarCavaloComponent } from "./pages/atualizar-cavalo/atualizar-cavalo.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cavalo/entrar', component: LoginComponent },
   { path: 'cavalo/cadastrar', component: CadastrarCavaloComponent },
   { path: 'cavalo/:id', component: DetalhesCavaloComponent },
+  { path: 'cavalo/atualizar/:id', component: AtualizarCavaloComponent },
 
 
 ]
@@ -18,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

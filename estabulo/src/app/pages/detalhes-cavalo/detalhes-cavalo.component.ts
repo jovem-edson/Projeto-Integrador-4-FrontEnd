@@ -19,7 +19,7 @@ export class DetalhesCavaloComponent implements OnInit {
     private route: ActivatedRoute,  // Para acessar os parâmetros da URL
     private cavaloService: CavaloService,
     private router: Router  // Serviço que busca os dados do cavalo
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // Captura o ID da URL
@@ -38,6 +38,12 @@ export class DetalhesCavaloComponent implements OnInit {
   }
 
   voltar(): void {
-  this.router.navigate(['/']);
-}
+    this.router.navigate(['/']);
+  }
+  editarCavalo(): void {
+    if (this.cavalo) {
+      this.router.navigate(['/cavalo/atualizar', this.cavalo.id]);  // Redireciona para a página de atualização com o ID do cavalo
+    }
+  }
+
 }
