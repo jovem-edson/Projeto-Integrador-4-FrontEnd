@@ -5,10 +5,13 @@ import { CavaloService } from '../../services/cavalo.service';  // Serviço para
 import { Cavalo } from '../../entities/cavalo';  // Modelo do Cavalo
 import { Router } from '@angular/router';
 
+import { CabecalhoComponent } from '../../components/cabecalho/cabecalho.component';
+import { RodapeComponent } from '../../components/rodape/rodape.component';
+
 @Component({
   selector: 'app-detalhes-cavalo',
   standalone: true,
-  imports: [MatIconModule],  // Importando o módulo de ícones
+  imports: [MatIconModule, CabecalhoComponent, RodapeComponent],  // Importando o módulo de ícones
   templateUrl: './detalhes-cavalo.component.html',
   styleUrl: './detalhes-cavalo.component.scss'
 })

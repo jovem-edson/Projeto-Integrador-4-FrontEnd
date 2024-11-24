@@ -5,10 +5,13 @@ import { Cavalo } from '../../entities/cavalo';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { CabecalhoComponent } from '../../components/cabecalho/cabecalho.component';
+import { RodapeComponent } from '../../components/rodape/rodape.component';
+
 @Component({
   selector: 'app-cadastrar-cavalo',
   standalone: true,
-  imports: [MatIconModule, FormsModule],
+  imports: [MatIconModule, FormsModule, CabecalhoComponent, RodapeComponent],
   templateUrl: './cadastrar-cavalo.component.html',
   styleUrl: './cadastrar-cavalo.component.scss'
 })
