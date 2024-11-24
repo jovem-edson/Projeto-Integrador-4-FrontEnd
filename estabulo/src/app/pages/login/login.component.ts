@@ -33,9 +33,9 @@ export class LoginComponent {
         private authService: AuthService
     ) {}
 
-    voltar(): void {
-        this.router.navigate(['/']);
-    }
+    // voltar(): void {
+    //     this.router.navigate(['/']);
+    // }
 
     onSubmit(): void {
         this.errorMessage = '';
