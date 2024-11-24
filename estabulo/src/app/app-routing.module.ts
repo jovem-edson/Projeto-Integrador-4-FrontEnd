@@ -7,7 +7,7 @@ import { CadastrarCavaloComponent } from "./pages/cadastrar-cavalo/cadastrar-cav
 import { AtualizarCavaloComponent } from "./pages/atualizar-cavalo/atualizar-cavalo.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'cavalo/cadastrar', component: CadastrarCavaloComponent },
   { path: 'cavalo/:id', component: DetalhesCavaloComponent },
