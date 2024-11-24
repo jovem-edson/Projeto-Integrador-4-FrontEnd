@@ -3,10 +3,6 @@ import { environment } from '../environments/envinronment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cavalo } from '../entities/cavalo';
-import { MatSnackBar } from '@angular/material/snack-bar';
-
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CavaloService {
   private baseUrl = environment.baseUrl;
 
-  constructor(private http: HttpClient, private snack: MatSnackBar) { }
-
-
-  message(msg: String): void {
-    this.snack.open(`${msg}`, `OK`, {
-      horizontalPosition: 'left',
-      verticalPosition: 'top',
-      duration: 5000
-    })
-  }
+  constructor(private http: HttpClient) { }
 
   listarCavalo() : Observable<Cavalo[]>{
     return this.http.get<Cavalo[]>(`${this.baseUrl}`);

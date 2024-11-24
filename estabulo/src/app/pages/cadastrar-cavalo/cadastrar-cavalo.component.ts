@@ -16,7 +16,7 @@ export class CadastrarCavaloComponent implements OnInit {
   cavalo: Cavalo = {
     nome: '',
     idade: 0,
-    tipo: '',
+    tipo: 'Corrida',
     raca: '',
     pelagem: '',
     genero: '',
@@ -99,6 +99,7 @@ export class CadastrarCavaloComponent implements OnInit {
         formData.forEach((value, key) => {
           console.log(key + ': ' + value);
         });
+        this.router.navigate(['/home']);  // Redireciona para a lista de cavalos
       },
       error: (err) => {
         alert('Erro ao cadastrar cavalo: ' + err.message);

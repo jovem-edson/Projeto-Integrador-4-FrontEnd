@@ -80,9 +80,8 @@
             <div class="formulario-cadastro-campo arquivo">
                 <label for="imagem">Imagem do Cavalo:</label>
                 <input type="file" id="imagem" accept="image/*" (change)="onImageChange($event)" />
+             
             </div>
-            <!-- Campos do formulário permanecem os mesmos -->
-            <!-- Adicione os campos para 'nome', 'idade', 'tipo', etc. -->
 
             <div class="formulario-cadastro-botao">
                 <button type="submit">{{ cavalo.id ? 'Salvar alterações' : 'Cadastrar Cavalo' }}</button>

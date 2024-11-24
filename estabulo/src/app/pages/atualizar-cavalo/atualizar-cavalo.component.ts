@@ -68,7 +68,7 @@ export class AtualizarCavaloComponent implements OnInit {
         formData.forEach((value, key) => {
           console.log(key + ': ' + value);
         });
-        this.router.navigate(['/cavalos']);  // Redireciona para a lista de cavalos
+        this.router.navigate(['/home']);  // Redireciona para a lista de cavalos
       },
       error: (err) => {
         alert('Erro ao atualizar o cavalo: ' + err.message);
