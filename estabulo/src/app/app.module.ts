@@ -17,7 +17,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastrarCavaloComponent } from './pages/cadastrar-cavalo/cadastrar-cavalo.component';
 import { DetalhesCavaloComponent } from './pages/detalhes-cavalo/detalhes-cavalo.component';
-import { AtualizarCavaloComponent } from './pages/atualizar-cavalo./atualizar-cavalo.component';
+import { AtualizarCavaloComponent } from './pages/atualizar-cavalo/atualizar-cavalo.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 //icones
 import {MatIconModule} from '@angular/material/icon'
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     CadastrarCavaloComponent,
     DetalhesCavaloComponent,
     AtualizarCavaloComponent,
+    CadastroComponent,
 
     MatIconModule,
     BrowserModule,

@@ -37,6 +37,10 @@ export class LoginComponent {
     //     this.router.navigate(['/']);
     // }
 
+    cadastro(): void {
+      this.router.navigate(['usuario/cadastrar']);
+    }
+
     onSubmit(): void {
         this.errorMessage = '';
         
