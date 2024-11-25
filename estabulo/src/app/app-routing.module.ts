@@ -4,7 +4,7 @@ import { DetalhesCavaloComponent } from "./pages/detalhes-cavalo/detalhes-cavalo
 import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { CadastrarCavaloComponent } from "./pages/cadastrar-cavalo/cadastrar-cavalo.component";
-import { AtualizarCavaloComponent } from "./pages/atualizar-cavalo/atualizar-cavalo.component";
+import { AtualizarCavaloComponent } from "./pages/atualizar-cavalo./atualizar-cavalo.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
