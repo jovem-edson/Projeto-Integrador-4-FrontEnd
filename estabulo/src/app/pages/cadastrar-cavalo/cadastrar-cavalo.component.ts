@@ -1,10 +1,11 @@
+// cadastrar-cavalo.component.ts
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CavaloService } from '../../services/cavalo.service';
 import { Cavalo } from '../../entities/cavalo';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { ToastrService } from 'ngx-toastr';
 import { CabecalhoComponent } from '../../components/cabecalho/cabecalho.component';
 import { RodapeComponent } from '../../components/rodape/rodape.component';
 
@@ -28,7 +29,11 @@ export class CadastrarCavaloComponent implements OnInit {
     imagem: undefined
   };
 
-  constructor(private router: Router, private cavaloService: CavaloService) {}
+  constructor(
+    private router: Router, 
+    private cavaloService: CavaloService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -45,35 +50,53 @@ export class CadastrarCavaloComponent implements OnInit {
   validarCamposObrigatorios(): boolean {
     let valido = true;
 
-    // Verificar se todos os campos obrigatórios foram preenchidos
     if (!this.cavalo.nome || this.cavalo.nome.trim() === '') {
-      alert('Nome é obrigatório');
+      this.toastr.warning('Nome é obrigatório', 'Atenção!', {
+        timeOut: 3000,
+        progressBar: true
+      });
       valido = false;
     }
     if (!this.cavalo.idade || this.cavalo.idade <= 0) {
-      alert('Idade é obrigatória e deve ser maior que zero');
+      this.toastr.warning('Idade é obrigatória e deve ser maior que zero', 'Atenção!', {
+        timeOut: 3000,
+        progressBar: true
+      });
       valido = false;
     }
     if (!this.cavalo.tipo || this.cavalo.tipo.trim() === '') {
-      alert('Tipo é obrigatório');
+      this.toastr.warning('Tipo é obrigatório', 'Atenção!', {
+        timeOut: 3000,
+        progressBar: true
+      });
       valido = false;
     }
     if (!this.cavalo.raca || this.cavalo.raca.trim() === '') {
-      alert('Raça é obrigatória');
+      this.toastr.warning('Raça é obrigatória', 'Atenção!', {
+        timeOut: 3000,
+        progressBar: true
+      });
       valido = false;
     }
     if (!this.cavalo.genero || this.cavalo.genero.trim() === '') {
-      alert('Gênero é obrigatório');
+      this.toastr.warning('Gênero é obrigatório', 'Atenção!', {
+        timeOut: 3000,
+        progressBar: true
+      });
       valido = false;
     }
     if (this.cavalo.preco <= 0) {
-      alert('Preço é obrigatório e deve ser maior que zero');
+      this.toastr.warning('Preço é obrigatório e deve ser maior que zero', 'Atenção!', {
+        timeOut: 3000,
+        progressBar: true
+      });
       valido = false;
     }
-    
-    // Verificar se a imagem foi fornecida (se for obrigatória)
     if (!this.cavalo.imagem) {
-      alert('Imagem é obrigatória');
+      this.toastr.warning('Imagem é obrigatória', 'Atenção!', {
+        timeOut: 3000,
+        progressBar: true
+      });
       valido = false;
     }
 
@@ -97,15 +120,17 @@ export class CadastrarCavaloComponent implements OnInit {
 
     this.cavaloService.inserirCavalo(formData).subscribe({
       next: () => {
-        alert('Cavalo cadastrado com sucesso!');
-        console.log('Cavalo:', formData);
-        formData.forEach((value, key) => {
-          console.log(key + ': ' + value);
+        this.toastr.success('Cavalo cadastrado com sucesso!', 'Sucesso!', {
+          timeOut: 3000,
+          progressBar: true
         });
-        this.router.navigate(['/home']);  // Redireciona para a lista de cavalos
+        this.router.navigate(['/home']);
       },
       error: (err) => {
-        alert('Erro ao cadastrar cavalo: ' + err.message);
+        this.toastr.error('Erro ao cadastrar cavalo: ' + err.message, 'Erro!', {
+          timeOut: 3000,
+          progressBar: true
+        });
       }
     });
   }

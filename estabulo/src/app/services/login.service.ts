@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../entities/login';
 import { environment } from '../environments/envinronment';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,8 @@ import { environment } from '../environments/envinronment';
 export class AuthService {
     private baseUrl2 = environment.baseUrl2;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient,    private snackBar: MatSnackBar
+    ) {}
 
     login(usuario: Usuario): Observable<any> {
         const headers = new HttpHeaders({
@@ -28,4 +30,16 @@ export class AuthService {
             { headers: headers }
         );
     }
+    cadastrar(usuario: Usuario): Observable<Usuario> {
+        return this.http.post<Usuario>(this.baseUrl2, usuario);
+      }
+      
+  message(msg: string): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top'
+    });
+  }
+
 }
